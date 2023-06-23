@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<robot name="dd_robot">
+    <link name="world">
+        
+    </link>
+
+    <link name="base">
+        <inertial>
+            <origin xyz="0.0 0.0 0.05" rpy="0.0 0.0 1.57"/>
+            <mass value="1.0"/>
+            <inertia ixx="4.079E+05" ixy="3.570E-10" ixz="-3.018E-07" iyy="3.911E+05" iyz="-2.177E-05" izz="7.877E+05"/>
+        </inertial>
+        
+        <visual>
+            <origin rpy="0.0 0.0 1.57" xyz="0.0 0.0 0.05"/>
+            <geometry>
+                <mesh filename="package://dd_robot/mesh/DD_4.stl" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="lidar">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="26305.599" ixy="0.0" ixz="0.0" iyy="26305.604" iyz="0.0" izz="39458.401"/>
+        </inertial>
+        
+        <visual>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://dd_robot/mesh/Lidar_2.stl" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="wheel1">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="1233.075" ixy="0.0" ixz="0.0" iyy="822.05" iyz="0.0" izz="822.05"/>
+        </inertial>
+        
+        <visual>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://dd_robot/mesh/Wheel4_R.stl" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="wheel2">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="1233.075" ixy="0.0" ixz="0.0" iyy="822.05" iyz="0.0" izz="822.05"/>
+        </inertial>
+
+        <visual>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://dd_robot/mesh/Wheel4_L.stl" scale="0.01 0.01 0.01"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="virtual" type="fixed">
+        <parent link="world"/>
+        <child link="base"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="lidar_j" type="fixed">
+        <parent link="base"/>
+        <child link="lidar"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.15"/>
+    </joint>
+
+    <joint name="joint1" type="revolute">
+        <parent link="base"/>
+        <child link="wheel1"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.51 0.0 0.1"/>
+        <axis xyz="1.0 0.0 0.0"/>
+        <limit lower="-3.14" upper="3.14" effort="1.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="joint2" type="revolute">
+        <parent link="base"/>
+        <child link="wheel2"/>
+        <origin rpy="0.0 0.0 0.0" xyz="-0.51 0.0 0.1"/>
+        <axis xyz="1.0 0.0 0.0"/>
+        <limit lower="-3.14" upper="3.14" effort="1.0" velocity="0.5"/>
+    </joint>
+</robot>

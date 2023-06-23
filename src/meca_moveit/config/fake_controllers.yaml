@@ -1,0 +1,13 @@
+controller_list:
+  - name: fake_chain_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - meca_axis_1_joint
+      - meca_axis_2_joint
+      - meca_axis_3_joint
+      - meca_axis_4_joint
+      - meca_axis_5_joint
+      - meca_axis_6_joint
+initial:  # Define initial robot poses per group
+  - group: chain
+    pose: home_1

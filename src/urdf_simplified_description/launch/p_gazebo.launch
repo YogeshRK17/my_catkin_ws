@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <param name="robot_description" command="$(find xacro)/xacro $(find urdf_simplified_description)/urdf/urdf_simplified.xacro"/>
+    
+    <node name="RSP" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model urdf_simplified" />
+
+    <rosparam command="load" file="$(find urdf_simplified_description)/config/p_controller.yaml" />
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" args="Revolute_1_position_controller Revolute_2_position_controller Revolute_3_position_controller Revolute_4_position_controller"/>
+
+</launch>

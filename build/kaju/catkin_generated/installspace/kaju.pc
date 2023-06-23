@@ -1,0 +1,8 @@
+prefix=/home/yogesh/catkin_ws/install
+
+Name: kaju
+Description: Description of kaju
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

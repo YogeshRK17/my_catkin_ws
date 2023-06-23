@@ -1,0 +1,15 @@
+Revolute_1_position_controller:
+  type: position_controllers/JointPositionController
+  joint: Revolute 1
+
+Revolute_2_position_controller:
+  type: position_controllers/JointPositionController
+  joint: Revolute 2
+
+Revolute_3_position_controller:
+  type: position_controllers/JointPositionController
+  joint: Revolute 3
+
+Revolute_4_position_controller:
+  type: position_controllers/JointPositionController
+  joint: Revolute 4

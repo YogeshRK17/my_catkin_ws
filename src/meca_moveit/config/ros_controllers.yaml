@@ -1,0 +1,40 @@
+robo_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - meca_axis_1_joint
+    - meca_axis_2_joint
+    - meca_axis_3_joint
+    - meca_axis_4_joint
+    - meca_axis_5_joint
+    - meca_axis_6_joint
+  gains:
+    meca_axis_1_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    meca_axis_2_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    meca_axis_3_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    meca_axis_4_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    meca_axis_5_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    meca_axis_6_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1

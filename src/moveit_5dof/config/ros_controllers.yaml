@@ -1,0 +1,28 @@
+controller_1:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - Revolute 1
+    - Revolute 2
+    - Revolute 3
+    - Revolute 4
+  gains:
+    Revolute 1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Revolute 2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Revolute 3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Revolute 4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1

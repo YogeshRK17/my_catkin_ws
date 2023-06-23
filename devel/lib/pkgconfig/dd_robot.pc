@@ -1,0 +1,8 @@
+prefix=/home/yogesh/catkin_ws/devel
+
+Name: dd_robot
+Description: Description of dd_robot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
